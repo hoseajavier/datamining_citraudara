@@ -1,6 +1,13 @@
+import subprocess
+
+try:
+    import cv2
+except ModuleNotFoundError:
+    subprocess.run(["pip", "install", "opencv-python-headless"])
+    import cv2
+
 import streamlit as st
 import numpy as np
-import cv2
 from PIL import Image
 from sklearn.metrics import silhouette_score
 
